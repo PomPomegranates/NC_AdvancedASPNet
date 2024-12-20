@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EvieWizarding.Controllers
 {
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class SpellsController : ControllerBase
     {
         private readonly SpellsService _spellService;
