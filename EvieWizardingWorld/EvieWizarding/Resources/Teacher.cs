@@ -7,7 +7,7 @@
         public string species { get; set; } = "";
         public string personality { get; set; } = "";
         public int rating  { get; set; }
-        public List<Spell> teaches { get; set; }
+        public List<string> teaches { get; set; }
     }
 
 

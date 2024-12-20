@@ -6,9 +6,9 @@ namespace EvieWizarding.HealthChecks
     public class TeacherHealthCheck : IHealthCheck
     {
 
-        private TeacherModel _TeacherModel { get; set; }
+        private TeachersModel _TeacherModel { get; set; }
 
-        public TeacherHealthCheck(TeacherModel model)
+        public TeacherHealthCheck(TeachersModel model)
         {
             _TeacherModel = model;
         }
@@ -19,7 +19,7 @@ namespace EvieWizarding.HealthChecks
 
             if (count <= 0 || count == null)
             {
-                return HealthCheckResult.Unhealthy("Default");
+                return HealthCheckResult.Unhealthy("There are no teachers available!");
 
             }
 

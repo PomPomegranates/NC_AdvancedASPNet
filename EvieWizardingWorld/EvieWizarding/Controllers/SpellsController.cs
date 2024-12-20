@@ -1,9 +1,10 @@
 ﻿using EvieWizarding.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Http.Results;
 
 namespace EvieWizarding.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("/[controller]")]
     public class SpellsController : ControllerBase
     {
         private readonly SpellsService _spellService;
@@ -18,5 +19,7 @@ namespace EvieWizarding.Controllers
         {
             return Ok(_spellService.GetSpells());
         }
+
+
     }
 }
