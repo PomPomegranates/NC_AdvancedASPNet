@@ -4,6 +4,7 @@ using System.Web.Http.Results;
 
 namespace EvieWizarding.Controllers
 {
+    [ApiController]
     [Route("/[controller]")]
     public class SpellsController : ControllerBase
     {
