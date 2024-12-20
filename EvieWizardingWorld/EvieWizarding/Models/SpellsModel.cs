@@ -6,6 +6,7 @@ namespace EvieWizarding.Models
     public class SpellsModel
     {
         private List<Spell> _spells { get; set; }
+        private Random rand = new Random();
 
        
         private List<Spell> ReadSpellList()
@@ -20,5 +21,11 @@ namespace EvieWizarding.Models
             if (_spells == null) _spells = ReadSpellList();
             return _spells;
         }
+
+        public Spell ReturnRandomSpell()
+        {
+            return ReturnSpells()[rand.Next(0, _spells.Count)];
+        }
+
     }
 }

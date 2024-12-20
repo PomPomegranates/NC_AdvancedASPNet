@@ -29,5 +29,10 @@ namespace EvieWizarding.Services
             return _model.AddTeacher(teacher);
         }
 
+        public bool DeleteTeacher(int id)
+        {
+            return _model.DeleteTeacher(id);
+        }
+
     }
 }

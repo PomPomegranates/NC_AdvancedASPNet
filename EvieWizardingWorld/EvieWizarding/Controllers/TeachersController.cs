@@ -55,5 +55,26 @@ namespace EvieWizarding.Controllers
                 return NoContent();
             }
         }
+
+        [HttpDelete("delete/{id}")]
+        public IActionResult TeacherDelete(string id)
+        {
+            if (int.TryParse(id, out int result))
+            {
+               if ( _teachersService.DeleteTeacher(result))
+                {
+                    return NoContent();
+                }
+               else
+                {
+                return NotFound($"Error 404: Teacher Id - {id} - Not Found");
+
+                }
+            }
+            else
+            {
+                return BadRequest($"Error 400, {id} is not a valid teacher ID");
+            }
+        }
     }
 }

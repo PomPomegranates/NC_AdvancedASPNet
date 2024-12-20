@@ -1,5 +1,6 @@
 ﻿using EvieWizarding.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using System.Web.Http.Results;
 
 namespace EvieWizarding.Controllers
@@ -19,6 +20,13 @@ namespace EvieWizarding.Controllers
         public IActionResult Index()
         {
             return Ok(_spellService.GetSpells());
+        }
+
+        [HttpGet("random")]
+        [EnableRateLimiting("fixed")]
+        public IActionResult GetRandomSpell()
+        {
+            return Ok(_spellService.GetRandomSpell());
         }
 
 

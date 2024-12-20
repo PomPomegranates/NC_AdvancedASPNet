@@ -42,5 +42,23 @@ namespace EvieWizarding.Models
                 return false;
             }
         }
+
+        public bool DeleteTeacher(int id)
+        {
+            if (ReturnTeacher() != null)
+            {
+                try
+                {
+                    Teachers.RemoveAt(Teachers.FindIndex(x => x.id == id));
+                    return true;
+
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
     }
 }

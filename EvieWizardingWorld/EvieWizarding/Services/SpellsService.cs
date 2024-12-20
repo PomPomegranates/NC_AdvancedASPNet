@@ -1,5 +1,7 @@
 ﻿using EvieWizarding.Models;
 using EvieWizarding.Resources;
+using Microsoft.AspNetCore.RateLimiting;
+
 
 namespace EvieWizarding.Services
 {
@@ -15,6 +17,12 @@ namespace EvieWizarding.Services
         public List<Spell> GetSpells()
         {
             return _SpellsRepository.ReturnSpells();
+        }
+
+        public Spell GetRandomSpell()
+        {
+
+            return _SpellsRepository.ReturnRandomSpell();
         }
     }
 }
